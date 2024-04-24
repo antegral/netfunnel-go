@@ -36,7 +36,7 @@ func main() {
   }
 
   // 5. Done!
-  client.Post(APPLICATION_API)
+  client.Post(APPLICATION_API, "application/json", nil)
 }
 
 ```
