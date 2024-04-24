@@ -3,7 +3,7 @@
 
 ## Before use
 > [!WARNING]
-> NetFunnel API runs in a separate environment for each service you use, so you need to know in advance the API Endpoint of the NetFunnel API for the service you want to use.
+> NetFunnel API runs in a separate environment for each service you use, so you need to know in advance the API Endpoint of the NetFunnel for the service you want to use.
 
 ## Example
 ```go
