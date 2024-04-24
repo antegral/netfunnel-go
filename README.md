@@ -5,8 +5,21 @@
 > [!WARNING]
 > NetFunnel API runs in a separate environment for each service you use, so you need to know in advance the API Endpoint of the NetFunnel for the service you want to use.
 
+## Install
+```sh
+$ go get github.com/antegral/netfunnel-go
+```
+
 ## Example
 ```go
+import (
+	"net/http"
+	"net/http/cookiejar"
+	"net/url"
+
+	"github.com/antegral/netfunnel-go"
+)
+
 const NETFUNNEL_API = "https://netfunnel.example.com/ts.wseq"
 const APPLICATION_API = "https://api.example.com"
 
@@ -17,7 +30,8 @@ func main() {
     RetryInterval: 1 * time.Second,
   }
 
-  // 2. Get a valid ticket for NetFunnel. If the queue is full, it will wait for a ticket to become valid.
+  // 2. Get a valid ticket for NetFunnel.
+  // If the queue is full, it will wait for a ticket to become valid.
   ticket := nf.GetTicket()
 
   // 3. Put the ticket into the cookie jar.
