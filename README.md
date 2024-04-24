@@ -1,5 +1,5 @@
 <h1 align="center">NetFunnel-Go</h1>
-<p align="center">A wrapper library for NetFunnel</p>
+<p align="center">A wrapper library of NetFunnel for Go</p>
 
 ## Before use
 > [!WARNING]
