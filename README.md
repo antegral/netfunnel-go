@@ -28,7 +28,7 @@ func main() {
     Value: ticket.Id,
   }
   cookies = append(cookies, cookie)
-  jar.SetCookies(host, cookies)
+  jar.SetCookies(APPLICATION_API, cookies)
 
   // 4. Now use it as you would normally use a cookie jar.
   client := http.Client{
