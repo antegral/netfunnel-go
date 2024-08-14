@@ -154,7 +154,7 @@ func parseTicketStr(body string) (Ticket, error) {
 
 	// parsing NetFunnel.gControl.result
 	// example: <int>:<int>:ip=nf.example.com&key=<string>&nnext=<int>&nwait=<int>&port=<int>&tps=<int>&ttl=<int>
-	val, err := url.ParseQuery(strings.SplitN(id, ":", 2)[2]) // we need only "ip=nf.example.com&key=<string>&nnext=<int>&nwait=<int>&port=<int>&tps=<int>&ttl=<int>"
+	val, err := url.ParseQuery(strings.SplitN(id, ":", -1)[2]) // we need only "ip=nf.example.com&key=<string>&nnext=<int>&nwait=<int>&port=<int>&tps=<int>&ttl=<int>"
 	if err != nil {
 		return Ticket{}, fmt.Errorf("failed to parse response body (url.ParseQuery failed): %s", err)
 	}
