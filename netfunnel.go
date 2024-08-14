@@ -139,6 +139,9 @@ func parseTicketStr(body string) (Ticket, error) {
 	// parsing response body. it expects to be a javascript variable declaration.
 	for _, v := range strings.Split(body, ";") {
 		kvArray := strings.SplitN(v, "=", 2)
+		if len(kvArray) != 2 {
+			continue
+		}
 		scriptVars[strings.Trim(kvArray[0], " ")] = strings.Trim(kvArray[1], " ")
 	}
 
